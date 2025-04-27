@@ -1,0 +1,27 @@
+[font]
+normal = { family = "Terminus", style = "Regular" }
+size = 10
+
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"
+
+[colors.normal]
+black = "#000000"
+red = "#a57b63"
+green = "#8da563"
+yellow = "#a59c63"
+blue = "#6387a5"
+magenta = "#a56383"
+cyan = "#63a5a2"
+white = "#cccccc"
+
+[colors.bright]
+black = "#000000"
+red = "#d18153"
+green = "#a3d153"
+yellow = "#d1c053"
+blue = "#639ac6"
+magenta = "#ce5891"
+cyan = "#63c6c1"
+white = "#FFFFFF"
