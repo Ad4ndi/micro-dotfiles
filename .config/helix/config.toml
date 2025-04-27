@@ -1,0 +1,38 @@
+theme = "uwu"
+
+[editor]
+line-number = "relative"
+true-color = true
+undercurl = true
+color-modes = true
+cursorline = true
+auto-save = true
+idle-timeout = 0
+gutters = ["diagnostics", "spacer", "diff", "line-numbers", "spacer", "spacer"]
+indent-heuristic = "tree-sitter"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+git-global = false
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal.g]
+"left" = "goto_line_start"
+"right" = "goto_line_end"
