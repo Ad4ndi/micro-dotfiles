@@ -1,5 +1,5 @@
 Config { font = "Terminus"
-        , fgColor  = "#a59c63"
+        , fgColor  = "#a59c63" 
         , position = TopW L 100
         , commands = [ Run Com "uname" ["-s","-r"] "" 36000
                      , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
@@ -8,5 +8,5 @@ Config { font = "Terminus"
                      ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "<fc=#a59c63>%XMonadLog%</fc>}{<fc=#8da563>%host%</fc> | <fc=#63a5a2>%uname%</fc> | <fc=#a59c63>%date%</fc>"
+        , template = "<fc=#a59c63>%XMonadLog%</fc>}{<fc=#8da563>%host%</fc> | <fc=#63a5a2>%uname%</fc> | <fc=#a59c63>%date%</fc> <fc=#a57b63>λ</fc> "
         }
