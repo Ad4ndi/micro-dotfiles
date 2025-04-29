@@ -6,6 +6,9 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 
+import XMonad.Layout.Spacing
+import XMonad.Layout.Gaps
+
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
@@ -29,13 +32,13 @@ xmconfig = def
     , startupHook = xmStart
     , manageHook = xmManage
     , logHook = dynamicLogWithPP xmXmobarPP
-    , borderWidth = 2
+    , borderWidth = 3
     , normalBorderColor = "#444444"
     , focusedBorderColor = "#6387a5"
     }
-
+    
     `additionalKeys`
-
+    
     [ ((mod4Mask, xK_Return), spawn "alacritty")
     , ((mod4Mask, xK_d), spawn "dmenu_run -fn 'Terminus-8' -nb '#000000' -nf '#8da563' -sb '#a59c63' -sf '#000000'")
     , ((mod4Mask, xK_q), kill)
@@ -45,7 +48,9 @@ xmconfig = def
 xmManage :: ManageHook
 xmManage = composeAll [ isDialog --> doFloat ]
 
-xmLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
+xmLayout = gaps [(U,5), (D,5), (L,5), (R,5)] $
+           spacing 5 $
+           (tiled ||| Mirror tiled ||| Full ||| threeCol)
     where
         threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
         tiled    = Tall nmaster delta ratio
@@ -83,5 +88,7 @@ xmXmobarPP = def
 
 xmStart :: X ()
 xmStart = do
-    spawnOnce "xsetroot -solid black"
+    spawnOnce "feh --bg-fill ~/Pictures/wall.jpg"
     spawnOnce "setxkbmap -layout lv,ru -option grp:alt_shift_toggle"
+    spawnOnce "picom &"
+    spawnOnce "alacritty"
